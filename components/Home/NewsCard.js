@@ -19,7 +19,7 @@ const NewsCard = ({ newsDetails }) => {
         <h2 className="text-left roboto-text text-md uppercase text-lightdark px-4 pb-2 leading-6">
           {title}
         </h2>
-        <p className="text-left px-4 mb-5 text-xs text-slate-600">
+        <p className="text-left px-4 mb-5 text-xs text-slate-600 pb-5">
           {subtitleFormatted}
         </p>
       </div>
