@@ -17,11 +17,11 @@ export const GlobalContext = createContext({});
 const MyApp = ({ Component, pageProps }) => {
   console.log(pageProps);
   const { global } = pageProps;
-  const shareImage = global.attributes.defaultSeo.shareImage.data
-    ? global.attributes.defaultSeo.shareimage?.data?.attributes?.url
+  const shareImage = global?.attributes?.defaultSeo?.shareImage?.data
+    ? global.attributes?.defaultSeo?.shareimage?.data?.attributes?.url
     : "";
-  const shareTitle = global.attributes.defaultSeo.metaTitle;
-  const shareDesc = global.attributes.defaultSeo.metaDescription;
+  const shareTitle = global?.attributes?.defaultSeo?.metaTitle;
+  const shareDesc = global?.attributes?.defaultSeo?.metaDescription;
 
   return (
     <>
@@ -29,14 +29,14 @@ const MyApp = ({ Component, pageProps }) => {
       <Head>
         <link
           rel="shortcut icon"
-          href={getStrapiMedia(global.attributes.favicon)}
+          href={getStrapiMedia(global?.attributes?.favicon)}
         />
         <meta property="og:title" content={shareTitle} key="title" />
         <meta property="og:description" content={shareDesc} />
         <meta property="og:type" content="site" />
         <meta property="og:image" content={shareImage} />
       </Head>
-      <GlobalContext.Provider value={global.attributes}>
+      <GlobalContext.Provider value={global?.attributes}>
         <Component {...pageProps} />
         <ToastContainer
           position="top-right"

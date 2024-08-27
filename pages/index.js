@@ -93,7 +93,7 @@ const Home = (props) => {
         <MainLayout>
           {/* <div className="md:flex md:space-x-4 py-5"> */}
           <div className="grid md:grid-cols-4 grid-cols-1 gap-5 mt-10">
-            {homepage.attributes.bottom_menu.map((item, ind) => (
+            {homepage?.attributes?.bottom_menu?.map((item, ind) => (
               <ItemCard key={ind} details={item} />
             ))}
           </div>

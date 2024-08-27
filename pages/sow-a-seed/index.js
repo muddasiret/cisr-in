@@ -9,23 +9,23 @@ const SowASeed = ({ seeds,global }) => {
   let title_image =  getTitleImage(global,"SOW A SEED")
 
   const { description, main_youtube, weekly_timetable, end_youtube } =
-    seeds[0].attributes;
+    seeds?.[0]?.attributes;
 
   const timeTableItem = (item, ind) => {
     const { image } = item;
-    const thumb = image.data[0].attributes.url;
+    const thumb = image?.data?.[0]?.attributes?.url;
     return (
       <div key={ind} className="text-center">
-        <div className="text-red-700 font-bold">{item.day}</div>
-        <div className="font-bold leading-8 my-2">{item.time}</div>
+        <div className="text-red-700 font-bold">{item?.day}</div>
+        <div className="font-bold leading-8 my-2">{item?.time}</div>
         <div className="text-center flex justify-center my-3">
           <img src={thumb} alt="profile" className="text-center h-32 flex" />
         </div>
         <div className="text-2xl roboto-text text-red-700 font-bold my-3">
-          {item.speaker}
+          {item?.speaker}
         </div>
-        <div className="italic  my-3">{item.topic}</div>
-        <div>{item.description}</div>
+        <div className="italic  my-3">{item?.topic}</div>
+        <div>{item?.description}</div>
       </div>
     );
   };
@@ -96,7 +96,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      seeds: data.data,
+      seeds: data?.data,
     },
     revalidate: 1,
   };

@@ -11,12 +11,12 @@ import MainLayout from "../../components/mainLayout";
 import Markdown from "markdown-to-jsx";
 
 const Event = ({ article }) => {
-  const imageUrl = getStrapiMedia(article.attributes.image);
-  const { title, location, datetime, description } = article.attributes;
+  const imageUrl = getStrapiMedia(article?.attributes?.image);
+  const { title, location, datetime, description } = article?.attributes;
   const seo = {
-    metaTitle: article.attributes.title,
-    metaDescription: article.attributes.title,
-    shareImage: article.attributes.image,
+    metaTitle: article?.attributes?.title,
+    metaDescription: article?.attributes?.title,
+    shareImage: article?.attributes?.image,
     article: true,
   };
 
@@ -93,7 +93,7 @@ export async function getStaticPaths() {
   return {
     paths: articlesRes.data.map((article) => ({
       params: {
-        slug: article.attributes.slug,
+        slug: article?.attributes?.slug,
       },
     })),
     fallback: false,

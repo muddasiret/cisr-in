@@ -12,7 +12,7 @@ const BookCard = ({ bookDetails }) => {
       : ""
   );
   if (bookDetails) {
-    imgSrc = cover.data.attributes.url;
+    imgSrc = cover?.data?.attributes?.url;
   }
 
   const showMore = () => {

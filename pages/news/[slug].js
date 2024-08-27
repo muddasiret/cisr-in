@@ -11,9 +11,9 @@ const Article = ({ article }) => {
   const { title, subtitle, youtube_link, published_at, content, pdf } =
     article.attributes;
   const seo = {
-    metaTitle: article.attributes.title,
-    metaDescription: article.attributes.title,
-    shareImage: article.attributes.image,
+    metaTitle: article?.attributes?.title,
+    metaDescription: article?.attributes?.title,
+    shareImage: article?.attributes?.image,
     article: true,
   };
 
@@ -53,8 +53,8 @@ const Article = ({ article }) => {
         {pdf &&
           pdf.data &&
           pdf.data.map((pdf, ind) => {
-            const pdfLink = pdf.attributes.url;
-            const pdfName = pdf.attributes.name;
+            const pdfLink = pdf?.attributes?.url;
+            const pdfName = pdf?.attributes?.name;
             return (
               <a key={ind} href={pdfLink} target="_blank" rel="noreferrer">
                 <div className="py-2 mb-4 w-fit text-center px-3 bg-primaryblue text-white text-sm font-semibold rounded-md shadow focus:outline-none">
@@ -74,7 +74,7 @@ export async function getStaticPaths() {
   return {
     paths: articlesRes.data.map((article) => ({
       params: {
-        slug: article.attributes.slug,
+        slug: article?.attributes?.slug,
       },
     })),
     fallback: false,

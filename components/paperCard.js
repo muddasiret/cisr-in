@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
 const PaperCard = ({ details }) => {
-  const { title, author, image, pdf } = details.attributes;
+  const { title, author, image, pdf } = details?.attributes;
   const thumb = image?.data?.attributes?.url;
-  const pdfLink = pdf.data.attributes.url;
+  const pdfLink = pdf?.data?.attributes?.url;
 
   return (
     <a href={pdfLink} target="_blank" rel="noreferrer">

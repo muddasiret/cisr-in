@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Accordion = ({ title, content, pdf }) => {
   const [isActive, setIsActive] = useState(false);
-  const pdfLink = pdf ? (pdf.data ? pdf.data.attributes.url : "") : "";
+  const pdfLink = pdf ? (pdf?.data ? pdf?.data?.attributes?.url : "") : "";
   const classes = typeof title === "string" ? "" : "mob-modal";
   return (
     <div className={"accordion-item" + " " + classes}>

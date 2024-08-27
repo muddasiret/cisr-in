@@ -138,7 +138,7 @@ export async function getStaticPaths() {
   return {
     paths: articlesRes.data.map((article) => ({
       params: {
-        slug: article.attributes.slug,
+        slug: article?.attributes?.slug,
       },
     })),
     fallback: false,

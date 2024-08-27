@@ -6,12 +6,12 @@ import { useEffect } from "react";
 const EventCard = ({ data }) => {
   let imgSrc =
     "https://479141-1506839-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/04/college_closed_img-700x441.jpg";
-  const { title, date, time, slug, location } = data.attributes;
+  const { title, date, time, slug, location } = data?.attributes;
   var today = new Date();
   const eventdate = new Date(date);
 
   if (data) {
-    imgSrc = data.attributes.image?.data?.attributes?.url;
+    imgSrc = data?.attributes?.image?.data?.attributes?.url;
   }
 
   return (

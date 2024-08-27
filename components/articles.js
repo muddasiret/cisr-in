@@ -14,7 +14,7 @@ const Articles = ({ articles }) => {
             return (
               <Card
                 article={article}
-                key={`article__left__${article.attributes.slug}`}
+                key={`article__left__${article?.attributes?.slug}`}
               />
             );
           })}
@@ -25,7 +25,7 @@ const Articles = ({ articles }) => {
               return (
                 <Card
                   article={article}
-                  key={`article__left__${article.attributes.slug}`}
+                  key={`article__left__${article?.attributes?.slug}`}
                 />
               );
             })}
