@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["localhost","islamicuniversity.s3.ap-south-1.amazonaws.com"],
   },
   env: {
-    NEXT_PUBLIC_STRAPI_API_URL: process.env.SERVER,
+    SERVER: process.env.SERVER,
     LOCAL_BACKEND: process.env.LOCAL_BACKEND
   },
 };
