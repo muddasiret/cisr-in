@@ -1,0 +1,67 @@
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  img.carouselImage {
+    height: 300px;
+  }
+  p.carouselSubtitle {
+    position: absolute;
+    font-size: 1rem;
+  }
+}
+
+.carouselImage {
+  max-height: 500px;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.imageContainer {
+  background-color: #000000e4;
+}
+
+p.carouselTitle {
+  background: #ffffffcc;
+  color: black;
+  padding: 2% 0%;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 600px) {
+  p.carouselTitle {
+    background: #ffffffcc;
+    color: black;
+    padding: 2% 0%;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  div.carouselTexts{
+    max-width: 100%;
+    right: 10%;
+    text-align: center;
+  }
+  img.carouselImage{
+    height: 250px;
+  }
+  p.carouselSubtitle{
+    text-align: center;
+  }
+  p.carouselTitle{
+    text-align: center;
+  }
+}
+
+.carouselSubtitle {
+  color: white;
+  text-align: left;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+.carouselTexts{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  max-width: 50%;
+}

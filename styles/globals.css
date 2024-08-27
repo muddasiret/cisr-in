@@ -2,32 +2,458 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+  font-family: "Charis SIL", serif;
+  background-color: #f9f6ef;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.roboto-text {
+  font-family: "Roboto Slab", serif !important;
+}
+
+ul {
+  list-style: unset;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#category {
+  font-family: Staatliches;
+  font-weight: 500;
+}
+
+#title {
+  letter-spacing: 0.4px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.13636;
+}
+
+#banner {
+  margin: 20px;
+  height: 800px;
+}
+
+#editor {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.uk-navbar-container {
+  background: #fff !important;
+  font-family: Staatliches;
+}
+
+img:hover {
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+/* .card-zoom {
+  @apply relative overflow-hidden;
+}
+
+.card-zoom-image {
+  @apply absolute w-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-103;
+}
+.card-zoom:hover .card-zoom-text {
+  @apply scale-100;
+} */
+
+.item-card-desc {
+  min-height: 144px;
+  display: flex;
+  align-items: center;
+}
+
+.year-card {
+  transition: max-height 0.5s;
+  animation-duration: 1s;
+  animation-name: lineInserted;
+}
+
+.ignore-css {
+  background: none;
+  border: none;
+  bottom: auto;
+  clear: none;
+  cursor: default;
+  /* didn't really know what the default for display should be*/
+  /*display:inline;*/
+  float: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-style: normal;
+  font-weight: normal;
+  height: auto;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  overflow: visible;
+  position: static;
+  right: auto;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: none;
+  top: auto;
+  visibility: visible;
+  white-space: normal;
+  width: auto;
+  z-index: auto;
+}
+
+.ignore-css h1,
+.ignore-css h2,
+.ignore-css h3,
+.ignore-css h4,
+.ignore-css h5,
+.ignore-css h6 {
+  font-size: auto;
+}
+
+.file-input {
+  display: inline-block;
+  text-align: left;
+  background: rgba(245, 243, 243, 0.704);
+  padding: 16px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.file-input > [type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.file-input > .button {
+  display: inline-block;
+  cursor: pointer;
+  background: #3e1b16;
+  padding: 8px 16px;
+  border-radius: 2px;
+  margin-right: 8px;
+  color: white;
+}
+
+.file-input:hover > .button {
+  background: #041e42;
+  color: white;
+}
+
+.file-input > .label {
+  color: #333;
+  white-space: nowrap;
+  opacity: 0.3;
+}
+
+.file-input.-chosen > .label {
+  opacity: 1;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  cursor: not-allowed;
+  color: #666666;
+}
+
+.newscardimg {
+  width: 100%;
+}
+
+.bookscardimg {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carouselTexts .pagetitle-bg {
+  height: auto;
+  padding: 2% 0%;
+  font-weight: 800;
+}
+
+.carouselTexts .page-title {
+  position: relative;
+  max-width: none;
+  border-top-right-radius: 0;
+  border-left: 4px solid #e45424;
+  padding: auto;
+  padding: 20px;
+  font-size: 2.25rem;
+}
+
+.page-title {
+  border-top-right-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-right: 4px solid #e45424;
+  font-family: "Montserrat Black", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1em;
+  padding: 40px;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  max-width: 42%;
+  min-width: 20%;
+  text-align: center;
+  z-index: 3;
+}
+
+.pagetitle-bg {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-overlay {
+  background-color: black;
+  opacity: 0.4;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.book-cover,
+.book-details {
+  margin-top: -20px;
+}
+
+.sanspro {
+  font-family: "Charis SIL", serif;
+}
+
+.background-biege {
+  background-color: #f9f6ef;
+}
+
+.paper-card {
+  min-height: 360px;
+}
+
+.project-card-desc {
+  min-height: 136px;
+}
+
+.project-card img {
+  height: 170px;
+  width: 80%;
+  object-fit: cover;
+}
+
+.header-main {
+  -webkit-box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .map-continer iframe {
+    max-height: 350px;
+    margin-top: 20px;
   }
+  .carouselTexts h1.page-title {
+    font-size: 1.2rem;
+    max-width: 100%;
+    padding: 10px;
+    line-height: 1.5em;
+  }
+  h1.page-title {
+    font-size: 1.5rem;
+    max-width: 80%;
+    padding: 20px;
+    line-height: 2em;
+  }
+  .pagetitle-bg {
+    height: 150px;
+  }
+}
+
+.markdown-reset blockquote {
+  margin: auto;
+}
+
+.markdown-reset h1 {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.markdown-reset h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.markdown-reset h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.markdown-reset h4 {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.markdown-reset h5 {
+  display: block;
+  font-size: 0.83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.markdown-reset h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+.markdown-reset img {
+  object-fit: cover;
+}
+
+.submenu {
+  position: absolute;
+  background: brown;
+  padding: 10px;
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.faculty-cont .accordion-title {
+  border-top: none;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #c59a50;
+  color: white;
+  font-weight: 600;
+  border-top: 1.5px solid black;
+  text-transform: capitalize;
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+.project-header {
+  min-height: 65px;
+}
+
+.search_icon svg {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.search_input {
+  padding: 5px;
+}
+
+.programfaculty {
+  border-radius: 50%;
+  width: 8rem;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.mob-modal .accordion-title {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.mob-modal a {
+  width: 80%;
+  text-align: left;
+  padding-left: 1rem;
+}
+
+.mob-modal .mob-modal-menu {
+  background: rgb(136, 39, 39);
+  width: 20%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mob-modal .accordion-content {
+  background-color: white;
+  padding: 0;
+}
+
+.mob-modal .accordion-content a {
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.mob-modal .accordion-content div {
+  width: 100%;
+  border-bottom: 1px solid;
+  padding: 10px;
 }
