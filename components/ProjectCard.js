@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const ProjectCard = ({ details }) => {
-  const { title, slug, image, short_description } = details.attributes;
+  const { title, slug, image, short_description } = details?.attributes;
   const thumb = image.data
     ? image?.data?.attributes?.url
     : "/images/placeholder.png";

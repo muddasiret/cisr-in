@@ -22,7 +22,7 @@ const ProjectOpen = ({ project }) => {
     publications_title,
     publications,
     team,
-  } = project.attributes;
+  } = project?.attributes;
 
   return (
     <Layout>

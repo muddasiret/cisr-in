@@ -8,7 +8,7 @@ import { getPageDescription, getTitleImage } from "../../utils/getTitleImage";
 const Projects = ({ projects, global }) => {
   let title_image = getTitleImage(global, "PROJECTS");
   let page_desc = getPageDescription(global, "PROJECTS");
-  const { research_project_title } = global.attributes;
+  const { research_project_title } = global?.attributes;
 
   return (
     <Layout>

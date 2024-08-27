@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const ProgrammeCard = ({ details }) => {
-  const { title, slug, image, category } = details.attributes;
+  const { title, slug, image, category } = details?.attributes;
   const thumb = image?.data?.attributes?.url;
   let degree = category ? category : "diploma";
 

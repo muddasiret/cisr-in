@@ -53,7 +53,7 @@ const ProgrammeOpen = ({ programme, global }) => {
     subtitle,
     faculty,
     category = "diploma",
-  } = programme.attributes;
+  } = programme?.attributes;
 
   const [openYear, setOpenYear] = useState([]);
   const [openApply, setOpenApply] = useState([]);

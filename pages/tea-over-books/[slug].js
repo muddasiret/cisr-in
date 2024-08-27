@@ -6,8 +6,8 @@ import Markdown from 'markdown-to-jsx';
 
 const Book = ({ books }) => {
   const { book_name, cover, youtube_link, description, author, image } =
-    books.attributes;
-  const cover_image = cover.data.attributes.url;
+    books?.attributes;
+  const cover_image = cover?.data?.attributes?.url;
   const main_image = image.data ? image?.data?.attributes?.url : "";
 
   return (
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
   return {
     paths: books.data.map((books) => ({
       params: {
-        slug: books.attributes.slug,
+        slug: books?.attributes?.slug,
       },
     })),
     fallback: false,

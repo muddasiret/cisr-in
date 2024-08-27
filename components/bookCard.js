@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const BookCard = ({ bookDetails }) => {
   let imgSrc = "/images/newsdummy.jpeg";
-  const { book_name, short_description, cover, slug } = bookDetails.attributes;
+  const { book_name, short_description, cover, slug } = bookDetails?.attributes;
   const [descriptionFormatted, setDescription] = useState(
     short_description
       ? short_description.length > 60

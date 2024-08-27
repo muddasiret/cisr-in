@@ -14,7 +14,7 @@ const About = ({ about, global }) => {
     telephone,
     email,
     about_accordion,
-  } = about.attributes;
+  } = about?.attributes;
   let title_image = getTitleImage(global, "ABOUT");
 
   return (
